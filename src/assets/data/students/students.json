@@ -1,0 +1,42 @@
+[
+    {
+        "name": "Sunita Williams",
+        "password": "password",
+        "category": "domestic",
+        "isInternationStudent": true,
+        "documents": {
+            "domicileCert": false,
+            "birthCert": false,
+            "markesheets": false,
+            "policeClearance": false,
+            "passport": false,
+            "signedDecl": false
+        },
+        "dob" :"13-04-1994",
+        "motherName": "Sushmita Williams",
+        "fatherName":  "Suresh Willams",
+        "lastScore" : "9.5 CGPA",
+        "imgUrl" : "",
+        "courseName": "BUSINESS STUDIES"
+    },
+    {
+        "name": "Abraham Lincon",
+        "password": "password",
+        "category": "international",
+        "isInternationStudent": false,
+        "documents": {
+            "domicileCert": false,
+            "birthCert": false,
+            "markesheets": false,
+            "policeClearance": false,
+            "passport": false,
+            "signedDecl": false
+        },
+        "dob" :"13-04-1994",
+        "motherName": "Sushmita Lincon",
+        "fatherName":  "Suresh Lincon",
+        "lastScore" : "9.8 CGPA"     ,
+        "imgUrl" : "",
+        "courseName": "INFORMATION TECHNOLOGY"
+    }
+]

@@ -1,0 +1,20 @@
+<div class="card clearfix {{student.category}}" >
+  <div class="cardimg">
+   <img class="studentImg" src="http://121clicks.com/wp-content/uploads/2013/07/black_and_white_portrait_43.jpg" alt="John" style="width:100%">
+  </div> 
+  
+  <div class="txtdetail">
+    <h3> <b>{{student.name | titlecase}} </b> </h3>
+    <p><b>Course: </b> {{student.courseName | titlecase}}</p>
+    <p><b>Category: </b>{{student.category | titlecase}}</p>
+    <p><b>Father Name:</b> {{student.fatherName | titlecase}}</p>
+    <p><b>Mother Name: </b>{{student.motherName | titlecase}}</p>
+    <p><b>Last Score: </b>{{student.lastScore}}</p>
+    
+    <div class="actionbtn">
+      <button (click) = editStudentDetails(student)>Edit</button>
+      <button (click) = viewStudentDetails(student)>View</button>
+     <button (click) = deleteStudentData(index)>Delete</button>
+    </div>
+  </div>
+

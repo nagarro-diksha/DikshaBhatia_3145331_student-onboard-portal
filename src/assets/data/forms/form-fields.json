@@ -1,0 +1,8 @@
+{
+    "domicileCert":true,
+    "birthCert":true,
+    "markesheets":true,
+    "policeClearance":false,
+    "passport":false,
+    "signedDecl":true
+}

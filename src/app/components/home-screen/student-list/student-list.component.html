@@ -1,0 +1,27 @@
+<app-navigation-bar></app-navigation-bar>
+<div class="container searchFilterDiv" >
+  <div class="form-group" id="categoryFilter">
+    <label for="category">Student Category: </label>
+    <select class="custom-select" id="filterCategory" name="filterCategory" [(ngModel)] ="filterCategory" >
+      <option>All</option>
+      <option>Domestic</option>
+      <option>International</option>
+    </select>
+    <input class="form-control" id="searchInput" type="text" placeholder="Search by Student Name ...." [(ngModel)]="searchInput">
+    <br>
+  </div>
+</div>
+
+<input  type="text" value="students.length" #numberOfStudents="ngModel" hidden ngModel />
+
+  <h4>Please fill student onboard FORM to add data to student list!! THANK YOU :)</h4>
+
+<div *ngFor="let student of students | studentNameFilter:searchInput | studentCategoryFilter: filterCategory; index as i;">
+  <div class="row">
+    <div class="col-md-6">
+      <app-student-details-card [student]="student" [index]="i"></app-student-details-card>
+    </div>
+  
+  </div>
+</div>
+

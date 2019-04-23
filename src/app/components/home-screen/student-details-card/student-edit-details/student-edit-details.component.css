@@ -1,0 +1,41 @@
+.outer {
+    border:8px solid #57747B;
+    width: 35%;
+    padding: 10px;
+    margin-top: 5px;
+    margin-left: 33%;
+    box-shadow: 0 8px 12px 0 rgba(0, 0, 0, 1);
+}
+
+.outer h2{
+    text-align: center;
+    font-family: 'Lora', sans-serif;
+  }
+
+.outer .onboardForm #formCheckboxes {
+    margin-left: 15%;
+}
+
+.outer .onboardForm #formInput {
+    margin-left: 5%;
+}
+
+.asteric{
+    color: red;
+    font-size: 20px;
+}
+
+.outer .onboardForm #formInput input,select{
+    margin-left: 5%;
+    padding: .1px;
+}
+
+.outer .onboardForm #formCheckboxes label{
+    padding: 6px;
+}
+
+.outer .btn {
+    margin-left: 45%;
+}
+
+

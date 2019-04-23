@@ -1,0 +1,15 @@
+.middleCntnt img{
+  height: 75%;
+  width: 75%;
+  margin-left: 2%;
+}
+
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: black;
+  color: white;
+  text-align: center;
+}

@@ -1,0 +1,94 @@
+<app-navigation-bar></app-navigation-bar>
+
+<div class="container-fluid outer onboardForm">
+    <h2>STUDENT ONBOARD FORM</h2>
+    <form #studentOnboardForm="ngForm" >
+        <!-- For value in JSON format that will send to back-end when the form will be submitted -->
+        <input #studentOnboardFormData hidden type="text" value= "{{studentOnboardForm.value | json }}"/>
+
+        <div class="form-group" [class.has-error]="studentName.invalid && studentName.touched"
+        [class.has-success]="studentName.valid">
+            <label class="control-label">Name</label> <span class="asteric">*</span>
+            <input ngModel required #studentName="ngModel" type="text" class="form-control" name="name" placeholder="Full Name">
+            <span class="help-block" *ngIf="studentName.touched && studentName.invalid">Please enter the user name</span>
+       </div>
+       
+        <div class="form-group" [class.has-error]="studentCategory.invalid && studentCategory.touched"
+        [class.has-success]="studentCategory.valid">
+            <label for="category">Category</label> <span class="asteric">*</span>
+            <select class="custom-select" id="category" name="category" [(ngModel)] ="category" required  #studentCategory="ngModel">
+                <option>Domestic</option>
+                <option>International</option>
+            </select>
+            <span class="help-block" *ngIf="studentCategory.touched && studentCategory.invalid">Please select the student category</span>
+        </div>
+
+        <div class="form-group"  [class.has-error]="studentDob.invalid && studentDob.touched"
+        [class.has-success]="studentDob.valid">
+            <label  class="control-label">DOB</label> <span class="asteric">*</span>
+            <input ngModel type="text" class="form-control" id="dob" name="dob" placeholder="DD-MM-YYYY" required #studentDob="ngModel">
+            <span class="help-block" *ngIf="studentDob.touched && studentDob.invalid">Please enter the Date of Birth</span>
+        </div>
+        <div class="form-group" [class.has-error]="studentFN.invalid && studentFN.touched" [class.has-success]="studentFN.valid">
+            <label for="fatherName">Father's Name</label> <span class="asteric">*</span>
+            <input ngModel type="text" class="form-control" id="fatherName" name="fatherName" placeholder="Father's Name" required #studentFN="ngModel">
+            <span class="help-block" *ngIf="studentFN.touched && studentFN.invalid">Please enter your Father's Name</span>
+        </div>
+        <div class="form-group" [class.has-error]="studentMN.invalid && studentMN.touched" [class.has-success]="studentMN.valid" >
+            <label for="motherName">Mother's Name</label> <span class="asteric">*</span>
+            <input ngModel type="text" class="form-control" id="motherName" name="motherName" placeholder="Mother's Name" required #studentMN="ngModel">
+            <span class="help-block" *ngIf="studentMN.touched && studentMN.invalid">Please enter your Mother's Name</span>
+        </div>
+        <div class="form-group" [class.has-error]="studentLS.invalid && studentLS.touched" [class.has-success]="studentLS.valid">
+            <label for="lastScore">Last Score</label> <span class="asteric">*</span>
+            <input ngModel type="text" class="form-control" id="lastScore" name="lastScore" placeholder="%(marks)" required #studentLS="ngModel">
+            <span class="help-block" *ngIf="studentLS.touched && studentLS.invalid">Please enter your Last Semester's score</span>
+        </div>
+
+        <div class="form-group" [class.has-error]="studentCN.invalid && studentCN.touched" [class.has-success]="studentCN.valid">
+            <label for="courseName">Course Name</label> <span class="asteric">*</span>
+            <input ngModel type="text" class="form-control" id="courseName" name="courseName" placeholder="course name" required  #studentCN="ngModel">
+            <span class="help-block" *ngIf="studentCN.touched && studentCN.invalid">Please enter your your Course Name</span>
+        </div>
+
+        <div id="formCheckboxes" ngModelGroup ="documents">
+            <label for="documents">Please check the list of Documents uploaded: </label>
+            <div>
+                <input ngModel type="checkbox" id="domicile" name="domicile" unchecked required #cbDomicile="ngModel">
+                <label for="domicile" >Domicile Certificate</label>
+                <span class="asteric">*</span>
+            </div>
+            <div>
+                <input ngModel type="checkbox" id="birthCert" name="birthCert" unchecked required>
+                <label for="birthCert">Birth Certificate</label>
+                <span class="asteric">*</span>
+            </div>
+            <div>
+                <input ngModel type="checkbox" id="marksheets" name="marksheets" unchecked required>
+                <label for="marksheets">Previous Marksheets</label>
+                <span class="asteric">*</span>
+            </div>
+            <!-- Mandatory only for International students-->
+            <div>
+                    <input ngModel type="checkbox" id="policeClearance" name="policeClearance" unchecked [required]="studentCategory.value === 'International'">
+                    <label for="marksheets">Police Clearance</label>
+                    <span  class="asteric" *ngIf="studentCategory.value === 'International'" >*</span>
+            </div>
+            <!-- Mandatory only for International students-->   
+            <div>
+                <input ngModel type="checkbox" id="passport" name="passport" unchecked [required]="studentCategory.value === 'International'">
+                <label for="passport">Passport</label>
+                <span class="asteric"  *ngIf="studentCategory.value === 'International'">*</span>
+            </div>
+            <div>
+                <input ngModel type="checkbox" id="declaration" name="declaration" unchecked required>
+                <label for="declaration">Signed Declaration</label>
+                <span class="asteric">*</span>
+            </div>
+        </div>
+
+        <button type="submit" (click)="onBoardSubmit(studentOnboardFormData.value)" class="btn btn-primary" [disabled]="studentOnboardForm.invalid">Onboard</button>
+
+    </form>
+
+</div>

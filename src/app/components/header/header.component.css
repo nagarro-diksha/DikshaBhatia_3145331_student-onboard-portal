@@ -1,0 +1,16 @@
+.header{
+    padding: 10px;
+    text-align: center;
+    background:#f1f1f1;
+}
+.header h1 >img{
+    width:45px;
+    position: relative;
+    top: -10px;
+    margin-right: 10px;
+}
+.header h1 .head-txt{display: inline-block;color:black;}
+
+h4{
+    text-align: right;
+}

@@ -1,0 +1,61 @@
+ 
+.Domestic{
+      background:teal; 
+   }
+  
+.International{
+    background:beige; 
+   }
+
+  .card {
+    margin: 10px;
+     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+     text-align: left;
+     font-size: small;
+     font-family: arial;
+  }
+
+  img.studentImg{
+    margin: 10px;
+
+  }
+  .txtdetail p{
+    margin: 0px 0 1px;
+    font-size: 17px;
+    font-style: inherit;
+    font-family: serif;
+  }
+  .title {
+    color: grey;
+    font-size: 30px;
+  }
+  .cardimg{width: 35%;float: left;}
+  .txtdetail{float: left; margin-left: 4%;width: 60%;margin-top: 4%}
+
+  .txtdetail h3{margin: 0;font-size: 28px; }
+  /* .actionbtn{width: 28%;float: left;} */
+  .txtdetail button {
+    border: none;
+    outline: 0;
+    display: inline-block;
+    padding: 8px;
+    color: white;
+    background-color: #000;
+    text-align: center;
+    cursor: pointer;
+    min-width: 100px;
+    font-size: 18px;
+    margin-right: 10px;
+  }
+  
+  a {
+    text-decoration: none;
+    font-size: 22px;
+    color: black;
+  }
+  
+  button:hover, a:hover {
+    opacity: 0.7;
+  }
+
+
